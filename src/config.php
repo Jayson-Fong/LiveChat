@@ -19,5 +19,6 @@ $config = [
     ],
     'locale' => 'en-US',
     'baseUrl' => 'https://www.example.com',
-    'prettyUrl' => false
+    'prettyUrl' => false,
+    'installLock' => false
 ];
