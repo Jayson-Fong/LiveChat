@@ -1,0 +1,7 @@
+{
+    "require": {
+        "catfan/medoo": "^2.1",
+        "twig/twig": "^3.0",
+        "utopia-php/locale": "^0.6.0"
+    }
+}
