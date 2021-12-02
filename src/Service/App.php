@@ -5,6 +5,7 @@ namespace Service;
 use Exception;
 use Medoo\Medoo;
 use Service\Entity\EntityManager;
+use Service\Entity\User;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Utopia\Locale\Locale;
@@ -101,7 +102,7 @@ class App
         }
     }
 
-    public function db(): Medoo
+    public function db(): Database
     {
         return $this->database;
     }
@@ -145,6 +146,19 @@ class App
                 $link . ($queryString ? '?' . $queryString : '') :
                 'index.php?' . $link . ($queryString ? '&' . $queryString : '')
             );
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function visitor(): Entity\Entity
+    {
+        if (isset($_COOKIE['user_id']) && intval($_COOKIE['user_id']) !== 0)
+        {
+            return $this->db()->fetchEntity(User::class, intval($_COOKIE['user_id']));
+        }
+
+        return $this->em()->create(User::class);
     }
 
 }

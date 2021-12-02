@@ -1,5 +1,6 @@
 {% include '__header.html.twig' %}
 
-{{ phrase('example.index.hello_welcome', {'name': 'friends'}) }}
-
+{{ phrase('index.message.welcome') }}
+<a href="{{ buildLink('account/register') }}">Register</a>
+<a href="{{ buildLink('account/login') }}">Login</a>
 {% include '__footer.html.twig' %}

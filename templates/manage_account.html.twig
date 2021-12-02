@@ -1,0 +1,6 @@
+{% include '__header.html.twig' %}
+
+{{ phrase('manage.hello_x', {'name': visitor['first_name']}) }}
+<a href="{{ buildLink('account/logout') }}">Logout</a>
+
+{% include '__footer.html.twig' %}

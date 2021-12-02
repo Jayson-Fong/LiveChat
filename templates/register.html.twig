@@ -1,0 +1,14 @@
+{% include '__header.html.twig' %}
+
+{{ phrase('register.create_account_below') }}
+
+<form action="{{ buildLink('account/registerpost') }}" method="POST">
+    <input type="text" name="first_name" required="required" placeholder="{{ phrase('form.first_name') }}">
+    <input type="text" name="last_name" required="required" placeholder="{{ phrase('form.last_name') }}">
+    <input type="email" name="email" required="required" placeholder="{{ phrase('form.email') }}">
+    <input type="password" name="password" required="required" placeholder="{{ phrase('form.password') }}">
+    <input type="submit" value="Edit">
+
+</form>
+
+{% include '__footer.html.twig' %}

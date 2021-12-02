@@ -18,7 +18,7 @@ $config = [
         'useCache' => false
     ],
     'locale' => 'en-US',
-    'baseUrl' => 'https://www.example.com',
+    'baseUrl' => 'http://localhost:8000',
     'prettyUrl' => false,
     'installLock' => false
 ];

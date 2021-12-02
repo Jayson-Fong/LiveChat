@@ -13,6 +13,10 @@ class Router extends Component
         if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0)
         {
             $end = intval(strpos($_SERVER['QUERY_STRING'], '&'));
+            if ($end === 0)
+            {
+                $end = 99999999;
+            }
             $path = preg_replace('/[^A-Za-z\/]/', '',
                 str_replace(' ', '', ucwords(str_replace('-', ' ',
                     trim(strtolower(substr($_SERVER['QUERY_STRING'], 0, $end)))

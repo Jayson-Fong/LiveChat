@@ -1,4 +1,14 @@
 {
   "exception.illegal_access.read_only": "Attempted to modify read-only storage.",
-  "example.index.hello_welcome": "Hello there and welcome, {{name}}!"
+  "header.text": "Live Chat",
+  "footer.copyright": "Gwinnett Technical College Students 2021",
+  "index.title": "Live Chat",
+  "index.message.welcome": "Welcome to our live chat service!",
+  "manage.hello_x": "Hello, {{name}}!",
+  "form.email": "Email",
+  "form.first_name": "First Name",
+  "form.last_name": "Last Name",
+  "form.password": "Password",
+  "login.welcome_login": "Welcome! Please login below.",
+  "register.create_account_below": "Welcome! Please register below."
 }

@@ -33,11 +33,16 @@ abstract class Entity extends Component
 
         if ($this->isInsert)
         {
-            unset($data[$structure->offsetGet('primary_key')]);
+            $primaryKey = $data[$structure->offsetGet('primary_key')];
+            if (isset($data[$primaryKey]) && $data[$primaryKey] === $structure['columns'][$primaryKey]['default'])
+            {
+                unset($data[$structure->offsetGet('primary_key')]);
+            }
             $this->app->db()->insert(
                 $structure->offsetGet('table'),
                 $data
             );
+            $this->__set($structure->offsetGet('primary_key'), $this->app->db()->id());
         }
         else
         {
@@ -54,7 +59,7 @@ abstract class Entity extends Component
 
     public function __get(string $name): mixed
     {
-        return $this->data[$name];
+        return $this->data[$name] ?? false;
     }
 
     public function __set(string $name, mixed $value)

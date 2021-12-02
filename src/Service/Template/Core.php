@@ -16,7 +16,8 @@ class Core extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('phrase', [$this, 'renderPhrase'])
+            new TwigFunction('phrase', [$this, 'renderPhrase']),
+            new TwigFunction('buildLink', [$this, 'buildLink'])
         ];
     }
 
@@ -28,10 +29,10 @@ class Core extends AbstractExtension
     /**
      * @throws Exception
      */
-    public function buildLink(string $link)
+    public function buildLink(string $link, array $args = [])
     {
         $app = App::getInstance();
-        return $app->config()->offsetGet('baseUrl') . DIRECTORY_SEPARATOR . $link;
+        return $app->buildLink($link, $args);
     }
 
 }

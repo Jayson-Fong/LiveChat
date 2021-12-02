@@ -1,0 +1,11 @@
+{% include '__header.html.twig' %}
+
+{{ phrase('login.welcome_login') }}
+<form action="{{ buildLink('account/post') }}" method="POST">
+    <input type="email" name="email" required="required" placeholder="{{ phrase('form.email') }}">
+    <input type="password" name="password" required="required" placeholder="{{ phrase('form.password') }}">
+    <input type="submit" value="Login">
+
+</form>
+
+{% include '__footer.html.twig' %}
